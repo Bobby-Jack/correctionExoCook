@@ -1,0 +1,16 @@
+{% extends 'cook/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>{{ing.name}} {{ing.quantity}}</h1>
+<img src={{ing.url_img}} alt="" width='300px' height='300px'>
+<form action={% url 'destroy' ing.id %} method='POST'>
+    {% csrf_token %}
+    <button type='submit'>destroy</button>
+</form>
+
+{% endblock content %}
+
+
+

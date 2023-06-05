@@ -1,0 +1,14 @@
+{% extends 'cook/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <form method="POST" class='form-horizontal contact-form text-right messageForm'>
+        {% csrf_token %}
+            {{ form }}
+        <button type="submit">Envoyé</button>
+    </form>
+
+{% endblock content %}
+
+
